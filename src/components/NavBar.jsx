@@ -3,7 +3,7 @@ const NavBar = () => {
         <>
             <nav
               className="navbar navbar-expand-lg px-4"
-              style={{ backgroundColor: '#000039' }}
+              style={{ backgroundColor: '#000039',  fontFamily: "'Poetsen One', sans-serif" }}
             >
               <a className="navbar-brand d-flex align-items-center" href="#" style={{ color: '#f8f69f' }}>
                 Rafa's Blog 
@@ -36,13 +36,13 @@ const NavBar = () => {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item">
-                    <a className="nav-link" href="#" style={{ color: '#f8f69f' }}>
+                    <a className="nav-link" href="/" style={{ color: '#f8f69f' }}>
                         Publications
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#" style={{ color: '#f8f69f' }}>
-                        Comments
+                    <a className="nav-link" href="/subjects" style={{ color: '#f8f69f' }}>
+                      Courses
                     </a>
                   </li>
                 </ul>
