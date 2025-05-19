@@ -22,13 +22,19 @@ const PublicationDetails = ({id}) => {
       }
 
       const result = await addComment(id, data)
+      
+      if(!username){
+        alert("Ad an username please.")
+      } else if(!comment){
+        alert("Add a comment please.")
+      }
 
       if (result) {
         setUsername("")
         setText("")
-        alert("Comentario enviado correctamente")
+        alert("Comment sent successfully")
       }
-
+      
       window.location.reload()
     }
 
