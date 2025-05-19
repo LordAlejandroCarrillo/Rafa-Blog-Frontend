@@ -1,7 +1,6 @@
 import NavBar from "../components/NavBar"
-import Publications from "../components/publications/Publications"
-const DashboardPage = () => {
-    localStorage.setItem('offset', 0)
+import Subjects from "../components/subjects/Subjects"
+const CoursesPage = () => {
     return (
         <>
           <div
@@ -12,8 +11,7 @@ const DashboardPage = () => {
             }}
           >
               <NavBar/>
-              <Publications/>
-
+              <Subjects/>
               <br />
               <br />
           </div>
@@ -21,4 +19,4 @@ const DashboardPage = () => {
     )
 }
 
-export default DashboardPage
+export default CoursesPage
