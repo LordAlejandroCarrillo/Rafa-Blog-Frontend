@@ -9,6 +9,15 @@ const ShowComments = ({id}) => {
     }, [id])
     if (!comments) return <p>Cargando comentarios...</p>
     let num= 0
+    const formatDate = (isoString) => {
+      const date = new Date(isoString)
+      const day = date.getDate().toString().padStart(2, '0')
+      const month = (date.getMonth() + 1).toString().padStart(2, '0')
+      const year = date.getFullYear()
+      const hours = date.getHours().toString().padStart(2, '0')
+      const minutes = date.getMinutes().toString().padStart(2, '0')
+      return `${day}-${month}-${year} ${hours}:${minutes}`
+    }
     return (
         <>
           <div
@@ -56,6 +65,9 @@ const ShowComments = ({id}) => {
                         <p className="card-text ms-3 me-3" style={{ textAlign: 'justify' }}>
                           {localComment.text}
                         </p>
+                        <div className="text-end mt-2 me-3" style={{ fontSize: '0.8rem', fontWeight: 300 }}>
+            {formatDate(localComment.date)}
+          </div>
 
                       </div>
                     </div>
