@@ -43,6 +43,7 @@ const PublicationDetails = ({id}) => {
       } else if(!text){
         alert("Add a comment please.")
       }
+      window.location.reload()
     }
 
     const formatDate = (isoString) => {
