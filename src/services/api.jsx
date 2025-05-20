@@ -67,3 +67,25 @@ export const getCategories = async () => {
         
     }
 }
+
+export const deleteComment = async (id) => {
+    try {
+        return await apiClient.delete(`/comments/delete-comment/${id}`)
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+export const updateComment = async (id, data) => {
+    try {
+        return await apiClient.put(`/comments/update-comment/${id}`, data)
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
