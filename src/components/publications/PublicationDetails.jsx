@@ -14,8 +14,20 @@ const PublicationDetails = ({id}) => {
     const [text, setText] = useState("")
 
     const handleSubmit = async (e) => {
+      if(!text && !username){
+        alert("Add a comment please.")
+      }
       e.preventDefault()
-
+      if(username == ""){
+        const result = await addComment(id, {username:'Anónimo',text})
+        if (result) {
+          setUsername("")
+          setText("")
+          alert("Comment sent successfully")
+        }
+        window.location.reload()
+        return
+      }
       const data = {
         username,
         text,
@@ -23,19 +35,14 @@ const PublicationDetails = ({id}) => {
 
       const result = await addComment(id, data)
       
-      if(!username){
-        alert("Ad an username please.")
-      } else if(!comment){
-        alert("Add a comment please.")
-      }
-
+      
       if (result) {
         setUsername("")
         setText("")
         alert("Comment sent successfully")
+      } else if(!text){
+        alert("Add a comment please.")
       }
-      
-      window.location.reload()
     }
 
     const formatDate = (isoString) => {
